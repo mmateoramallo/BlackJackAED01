@@ -26,7 +26,7 @@ croupier = 'Croupier'
 
 #Declaracion de variables
 
-cartas = (1,2,3,4,5,6,7,8,9,10)
+cartas = (1,2)
 
 palos = ('Picas', 'Trebol', 'Corazones', 'Diamantes')
 
@@ -36,13 +36,31 @@ print('*'*25, 'Generando Tirada', '*'*25)
 
 valor_carta_jugador = random.choice(cartas)
 
+#Validar en caso de que sea un AS la primera carta
+if valor_carta_jugador == 1:
+    valor_carta_jugador = 11
+else:
+    valor_carta_jugador = random.choice(cartas)
+
 valor_palo_jugador = random.choice(palos)
 
 #Carta Croupier
 
 valor_carta_croupier = random.choice(cartas)
 
+#Validar en caso de que sea un AS la primera carta
+if valor_carta_croupier == 1:
+    valor_carta_croupier = 11
+else:
+    valor_carta_croupier = random.choice(cartas)
+
 valor_palo_croupier = random.choice(palos)
+
+#Visualizacion de valores
+
+print('La primera carta del jugador es: ', str(valor_carta_jugador))
+print('La primera carta del croupier es: ', str(valor_carta_croupier))
+
 
 ###
 #Generar Segunda Tirada
@@ -52,34 +70,43 @@ print('*'*25, 'Generando Segunda Tirada', '*'*25)
 
 valor_segunda_carta_jugador = random.choice(cartas)
 
+#Validacion AS
+
+if valor_segunda_carta_jugador == 1:
+    valor_segunda_carta_jugador = 11
+else:
+    valor_segunda_carta_jugador = random.choice(cartas)
+
 valor_segundo_palo_jugador = random.choice(palos)
 
 #Segunda Carta Croupier
 
 valor_segunda_carta_croupier = random.choice(cartas)
 
-valor_segundo_palo_croupier = random.choice(palos)
+#Validacion AS
 
-#Validar si sali AS en alguna de las primeras cartas
-if valor_carta_jugador == 1:
-    valor_carta_jugador = 11
-elif valor_segunda_carta_jugador == 1:
-    valor_segunda_carta_jugador = 11
-elif valor_carta_croupier == 1:
-    valor_carta_croupier = 11
-elif valor_segunda_carta_croupier == 1:
+if valor_segunda_carta_croupier == 1:
     valor_segunda_carta_croupier = 11
 else:
-    valor_carta_jugador = random.choice(cartas)
-    valor_segunda_carta_jugador = random.choice(cartas)
-    valor_carta_croupier = random.choice(cartas)
     valor_segunda_carta_croupier = random.choice(cartas)
 
+valor_segundo_palo_croupier = random.choice(palos)
 
-print('Primera Carta Jugador', valor_carta_jugador)
-print('Segunda Carta Jugador', valor_segunda_carta_jugador)
-print('Puntaje Jugador', str(valor_carta_jugador + valor_segunda_carta_jugador))
+#Visualizacion de valores
 
-print('Primera Carta Croupier', valor_carta_croupier)
-print('Segunda Carta Croupier', valor_segunda_carta_croupier)
-print('Puntaje Croupier', str(valor_carta_croupier + valor_segunda_carta_croupier))
+print('La segunda carta del jugador es: ', str(valor_segunda_carta_jugador))
+print('La segunda carta del croupier es: ', str(valor_segunda_carta_croupier))
+
+#Puntaje Total
+
+puntaje_jugador = valor_carta_jugador + valor_segunda_carta_jugador
+
+puntaje_croupier = valor_carta_croupier + valor_segunda_carta_croupier
+
+print('Puntaje Total Jugador:',puntaje_jugador)
+print('Puntaje Total Croupier:',puntaje_croupier)
+
+
+
+
+
