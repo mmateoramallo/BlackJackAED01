@@ -197,7 +197,7 @@ if puntuacion_player > puntuacion_croupier:
     print('-' * 11, player,'tuvo mas puntos!!!!', '-' * 1)
 else:
     print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
-    print('-' * 11,, 'El Crupier tuvo mas puntos!!!!', '-' * 1)
+    print('-' * 11, 'El Crupier tuvo mas puntos!!!!', '-' * 11)
 
 #Determinar Ganador
 
@@ -220,7 +220,7 @@ if distancia_player < distancia_croupier:
 elif distancia_player > distancia_croupier:
     print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
     ganador = 'Croupier'
-    print('-' * 11,'El ganador es', ganador,'-' * 11)
+    print('-' * 11,'El ganador es', ganador, '-' * 11)
 elif distancia_player == distancia_croupier:
     print('-'*21,'Felicidades Ambos Ganaron!!!!', '-'*21)
     print('-'*21,'Empataron Ambos Jugadores', '-'*21)
