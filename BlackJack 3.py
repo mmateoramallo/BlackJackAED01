@@ -105,65 +105,60 @@ elif segunda_carta_croupier == 'AS':
     print('Carta Croupier:', carta_croupier_letra, 'de', palo_segunda_carta_croupier)
 
 
-
-print('Segunda Carta Croupier: ',segunda_carta_croupier, 'palo', palo_segunda_carta_croupier)
-
-#Puntajes Hasta Ahora
-
+#-->Obtencion de puntajes
 puntuacion_player = carta_jugador + segunda_carta_jugador
 print('-'*25,'El puntaje total de', player, 'es de:', puntuacion_player, 'puntos','-'*25)
 
 puntuacion_croupier = carta_croupier + segunda_carta_croupier
 print('-'*25,'El puntaje total del croupier es de:', puntuacion_croupier, 'puntos','-'*25)
 
-#--------------------------> Tercera Carta, Validacion
+
+#----------------------------------------------------#
 
 print('*'*25, 'Generando Tercera Tirada', '*'*25)
 
-#Obtencion De Tercera Carta Para el jugador
+#Tercera Carta del jugador
 
-if puntuacion_player < 21:
+tercera_carta_jugador = random.choice(cartas)
 
-    tercera_carta_jugador = random.choice(cartas)
+palo_tercera_carta_jugador = random.choice(palos)
 
-    palo_tercera_carta_jugador = random.choice(palos)
+if puntuacion_player <= 16:
+    # Al negar la proposicion estamos diciendo que el bloque de codigo se cumplira siempre y cuando la puntuacion del jugador no supere los 17 puntos
+    if not(puntuacion_player >= 17):
+        if tercera_carta_jugador == 'J' or tercera_carta_jugador == 'K' or tercera_carta_jugador == 'Q':
+            carta_jugador_letra = tercera_carta_jugador
+            tercera_carta_jugador = 10
+            print('La carta de', player, 'es la', carta_jugador_letra, 'cuyo palo es', palo_tercera_carta_jugador)
+        elif tercera_carta_jugador == 'AS':
+            #Si la puntuacion del jugador no supera
+            if not(puntuacion_player > 21):
 
-    if tercera_carta_jugador == 'J' or tercera_carta_jugador == 'K' or tercera_carta_jugador == 'Q':
-        carta_jugador_letra = tercera_carta_jugador
-        tercera_carta_jugador = 10
-        print('La carta de', player, 'es la', carta_jugador_letra, 'cuyo palo es', palo_tercera_carta_jugador)
-    elif tercera_carta_jugador == 'AS':
-        carta_jugador_letra = tercera_carta_jugador
-        tercera_carta_jugador = 11
+
+
+
+
+if tercera_carta_jugador == 'J' or tercera_carta_jugador == 'K' or tercera_carta_jugador == 'Q':
+    carta_jugador_letra = tercera_carta_jugador
+    tercera_carta_jugador = 10
+    print('La carta de', player, 'es la', carta_jugador_letra, 'cuyo palo es', palo_tercera_carta_jugador)
+elif tercera_carta_jugador == 'AS':
+    if puntuacion_player > 21:
+        carta_jugador_letra = segunda_carta_jugador
+        tercera_carta_jugador = 1
         print('La carta de', player, 'es el', carta_jugador_letra, 'cuyo palo es', palo_tercera_carta_jugador)
-
-    print('La carta de', player, 'es el numero', tercera_carta_jugador, 'cuyo palo es', palo_tercera_carta_jugador)
-
-
-
-#Obtener Tercera Carta al Croupier
-if puntuacion_croupier <= 16:
-    if puntuacion_croupier >= 17:
-        print('Fin de la Mano Para el Croupier')
-
-    tercera_carta_croupier = random.choice(cartas)
-
-    palo_tercera_carta_croupier = random.choice(palos)
-
-    if tercera_carta_croupier == 'J' or tercera_carta_croupier == 'K' or tercera_carta_croupier == 'Q':
-        carta_croupier_letra = tercera_carta_croupier
-        tercera_carta_croupier = 10
-        print('Carta Croupier: ', carta_croupier_letra, ' cuyo palo es' , palo_tercera_carta_croupier)
-    elif tercera_carta_croupier == 'AS':
-        carta_croupier_letra = tercera_carta_croupier
-        tercera_carta_croupier = 11
-        print('Carta Croupier: ', carta_croupier_letra, 'de', palo_tercera_carta_croupier)
-
-    print('Tercera Carta Croupier:', tercera_carta_croupier, 'palo', palo_tercera_carta_croupier)
+    else:
+        carta_jugador_letra = segunda_carta_jugador
+        tercera_carta_jugador = 11
 
 
 
-#Obtener puntuacion total
+
+
+
+
+
+#Puntajes Hasta Ahora
 
 puntuacion_player = carta_jugador + segunda_carta_jugador
 print('-'*25,'El puntaje total de', player, 'es de:', puntuacion_player, 'puntos','-'*25)
