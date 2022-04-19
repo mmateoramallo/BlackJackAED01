@@ -298,6 +298,3 @@ if mismos_palos and (carta_jugador == carta_croupier):
 
 if cantidad_de_figuras >= 1:
     print('-' * 20 + '>', 'Salieron', cantidad_de_figuras , 'figuras')
-
-
-
