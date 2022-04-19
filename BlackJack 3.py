@@ -1,7 +1,7 @@
 #Importando el modulo random
 import random
 
-print('*'*25, 'BlackJack', '*'*25)
+print('♠'*25, 'BlackJack', '♠'*25)
 
 #Asignacion nombres, para declarar el ganador
 
@@ -23,7 +23,7 @@ palos = ('Picas', 'Trebol', 'Corazones', 'Diamantes')
 
 #Generar Aleatoriamente los palos y valores
 
-print('*'*25, 'Generando Primera Tirada', '*'*25)
+print('♢'*25, 'Generando Primera Tirada', '♢'*25)
 
 carta_jugador = random.choice(cartas)
 
@@ -71,7 +71,7 @@ print('-'*25,'El puntaje total del croupier es de:', puntuacion_croupier, 'punto
 #----------------------------------------------------#
 #Segunda Mano De Cartas
 
-print('*'*25, 'Generando Segunda Tirada', '*'*25)
+print('♢'*25, 'Generando Segunda Tirada', '♢'*25)
 
 segunda_carta_jugador = random.choice(cartas)
 
@@ -104,6 +104,7 @@ elif segunda_carta_croupier == 'AS':
     segunda_carta_croupier = 11
     print('Carta Croupier:', carta_croupier_letra, 'de', palo_segunda_carta_croupier)
 
+print('Carta Croupier:',  segunda_carta_croupier, 'palo', palo_segunda_carta_croupier)
 
 #-->Obtencion de puntajes
 puntuacion_player = carta_jugador + segunda_carta_jugador
@@ -115,7 +116,7 @@ print('-'*25,'El puntaje total del croupier es de:', puntuacion_croupier, 'punto
 
 #----------------------------------------------------#
 
-print('*'*25, 'Generando Tercera Tirada', '*'*25)
+print('♢'*25, 'Generando Tercera Tirada', '♢'*25)
 
 #Tercera Carta del jugador
 
@@ -213,7 +214,7 @@ distancia_croupier = abs(21 - puntuacion_croupier)
 
 #Comparo las distancias y asi determino el ganador
 if distancia_player < distancia_croupier:
-    print('-' * 21, 'Felicidades!!!!', '-' * 21)
+    print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
     ganador = player
     print('El ganador es', ganador)
 elif distancia_player > distancia_croupier:
