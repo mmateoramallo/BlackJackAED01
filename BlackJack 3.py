@@ -30,6 +30,8 @@ cantidad_de_figuras = 0
 
 print('♢'*25, 'Generando Primera Tirada', '♢'*25)
 
+print()
+
 carta_jugador = random.choice(cartas)
 
 palo_primera_carta_jugador = random.choice(palos)
@@ -68,7 +70,7 @@ elif carta_croupier == 'AS':
     carta_croupier = 11
     print('Carta Croupier:', carta_croupier_letra, 'de', palo_primera_carta_croupier)
 
-print('Carta Croupier: ', carta_croupier, 'palo' , palo_primera_carta_croupier)
+print('Carta Croupier: ', carta_croupier, 'cuyo palo es' , palo_primera_carta_croupier)
 
 #Puntaje De Ambos Jugadores
 
@@ -92,6 +94,8 @@ print()
 print()
 
 print('♢'*25, 'Generando Segunda Tirada', '♢'*25)
+
+print()
 
 segunda_carta_jugador = random.choice(cartas)
 
@@ -130,7 +134,7 @@ elif segunda_carta_croupier == 'AS':
     segunda_carta_croupier = 11
     print('Carta Croupier:', carta_croupier_letra, 'de', palo_segunda_carta_croupier)
 
-print('Carta Croupier:',  segunda_carta_croupier, 'palo', palo_segunda_carta_croupier)
+print('Carta Croupier:',  segunda_carta_croupier, 'cuyo palo es', palo_segunda_carta_croupier)
 
 
 #-->Obtencion de puntajes
@@ -186,6 +190,8 @@ if puntuacion_player <= 16:
                 print('La carta de', player, 'es el', carta_jugador_letra, 'cuyo palo es', palo_tercera_carta_jugador)
 
         # Puntajes Finales
+        print('La carta de', player, 'es el', tercera_carta_jugador, 'cuyo palo es', palo_tercera_carta_jugador)
+        print()
 
         puntuacion_player = carta_jugador + segunda_carta_jugador + tercera_carta_jugador
         print('-' * 25, 'El puntaje total de', player, 'es de:', puntuacion_player, 'puntos', '-' * 25)
@@ -222,6 +228,9 @@ if puntuacion_croupier <= 16:
 
         # Puntajes Finales
 
+        print('Carta Croupier: ', tercera_carta_croupier, 'de', palo_tercera_carta_croupier)
+        print()
+
         puntuacion_croupier = carta_croupier + segunda_carta_croupier + tercera_carta_croupier
         print('-' * 25, 'El puntaje total del croupier es de:', puntuacion_croupier, 'puntos', '-' * 25)
 
@@ -235,11 +244,17 @@ print()
 print()
 
 print('-' * 25, 'El puntaje total de', player, 'es de:', puntuacion_player, 'puntos', '-' * 25)
+
+print()
+
 print('-' * 25, 'El puntaje total del croupier es de:', puntuacion_croupier, 'puntos', '-' * 25)
+
+print()
+print()
 
 #Quien Obtuvo el mayor puntaje
 if puntuacion_player > puntuacion_croupier:
-    print('-' * 11, player,'tuvo mas puntos!!!!', '-' * 1)
+    print('-' * 11, player,'tuvo mas puntos!!!!', '-' * 11)
 else:
     print('-' * 11, 'El Crupier tuvo mas puntos!!!!', '-' * 11)
 
@@ -258,13 +273,13 @@ distancia_croupier = abs(21 - puntuacion_croupier)
 
 #Comparo las distancias y asi determino el ganador
 if distancia_player < distancia_croupier:
-    print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
     ganador = player
     print('-' * 11,'El ganador es', ganador,'-' * 11)
+    print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
 elif distancia_player > distancia_croupier:
-    print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
     ganador = 'Croupier'
     print('-' * 11,'El ganador es', ganador, '-' * 11)
+    print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
 elif distancia_player == distancia_croupier:
     print('-'*21,'Felicidades Ambos Empataron!!!!', '-'*21)
 
