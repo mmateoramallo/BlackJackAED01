@@ -186,6 +186,10 @@ if puntuacion_croupier <= 16:
 
 
 
+
+
+
+
 '''
 #Puntajes Finales
 
