@@ -184,18 +184,43 @@ if puntuacion_croupier <= 16:
 
 
 
-
-
-
-
-
-
-'''
 #Puntajes Finales
 
-puntuacion_player = carta_jugador + segunda_carta_jugador + tercera_carta_jugador
-print('-'*25,'El puntaje total de', player, 'es de:', puntuacion_player, 'puntos','-'*25)
+print('-'*21, 'Resultados', '-'*21)
+print('-' * 25, 'El puntaje total de', player, 'es de:', puntuacion_player, 'puntos', '-' * 25)
+print('-' * 25, 'El puntaje total del croupier es de:', puntuacion_croupier, 'puntos', '-' * 25)
 
-puntuacion_croupier = carta_croupier + segunda_carta_croupier + tercera_carta_croupier
-print('-'*25,'El puntaje total del croupier es de:', puntuacion_croupier, 'puntos','-'*25)
-'''
+#Quien Obtuvo el mayor puntaje
+if puntuacion_player > puntuacion_croupier:
+    print('-' * 21, 'Felicidades!!!!', '-' * 21)
+    print('-' * 11, player,'tuvo mas puntos!!!!', '-' * 1)
+else:
+    print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
+    print('-' * 11, 'El Crupier tuvo mas puntos!!!!', '-' * 1)
+
+#Determinar Ganador
+
+
+#Para saber quien estuvo mas cerca resto las puntuaciones y luego comparo los resultados de la resta
+
+distancia_player = abs(21 - puntuacion_player)
+
+#print(distancia_player)
+
+distancia_croupier = abs(21 - puntuacion_croupier)
+
+#print(distancia_croupier)
+
+#Comparo las distancias y asi determino el ganador
+if distancia_player < distancia_croupier:
+    print('-' * 21, 'Felicidades!!!!', '-' * 21)
+    ganador = player
+    print('El ganador es', ganador)
+elif distancia_player > distancia_croupier:
+    print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
+    ganador = 'Croupier'
+    print('El ganador es', ganador)
+elif distancia_player == distancia_croupier:
+    print('-'*21,'Felicidades Ambos Ganaron!!!!', '-'*21)
+    print('-'*21,'Empataron Ambos Jugadores', '-'*21)
+
