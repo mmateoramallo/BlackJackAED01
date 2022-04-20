@@ -298,3 +298,17 @@ if mismos_palos and (carta_jugador == carta_croupier):
 
 if cantidad_de_figuras >= 1:
     print('-' * 20 + '>', 'Salieron', cantidad_de_figuras , 'figuras')
+
+
+'''
+if (distancia_player < distancia_croupier) and puntuacion_player < 21:
+    ganador = player
+    print('-' * 11,'El ganador es', ganador,'-' * 11)
+    print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
+elif distancia_player > distancia_croupier and puntuacion_croupier < 21:
+    ganador = 'Croupier'
+    print('-' * 11,'El ganador es', ganador, '-' * 11)
+    print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
+elif (distancia_player == distancia_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
+    print('-' * 21, 'Felicidades Ambos Empataron!!!!', '-' * 21)
+'''
