@@ -255,9 +255,10 @@ print()
 #Quien Obtuvo el mayor puntaje
 if puntuacion_player > puntuacion_croupier:
     print('-' * 11, player,'tuvo mas puntos!!!!', '-' * 11)
-else:
+elif puntuacion_croupier > puntuacion_player:
     print('-' * 11, 'El Crupier tuvo mas puntos!!!!', '-' * 11)
-
+else:
+    print('-' * 21, 'Ambos Obtuvieron el mismo Puntaje, vuelve a jugar!!', '-' * 21)
 
 #Determinar Ganador
 
@@ -279,16 +280,5 @@ elif (distancia_croupier < distancia_player) and puntuacion_croupier < 21:
     print('-' * 11, 'El ganador es', ganador, '-' * 11)
 elif (distancia_player == distancia_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
     print('-' * 21, 'Ambos Empataron!!', '-' * 21)
-
-'''
-if (distancia_player < distancia_croupier) and puntuacion_player < 21:
-    ganador = player
-    print('-' * 11,'El ganador es', ganador,'-' * 11)
-    print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
-elif distancia_player > distancia_croupier and puntuacion_croupier < 21:
-    ganador = 'Croupier'
-    print('-' * 11,'El ganador es', ganador, '-' * 11)
-    print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
-elif (distancia_player == distancia_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
-    print('-' * 21, 'Felicidades Ambos Empataron!!!!', '-' * 21)
-'''
+else:
+    print('-' * 21, 'Mejor suerte a la proxima!!', '-' * 21)
