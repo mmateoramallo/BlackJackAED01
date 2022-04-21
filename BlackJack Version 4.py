@@ -278,6 +278,14 @@ elif (distancia_croupier < distancia_player) and puntuacion_croupier < 21:
     print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
     ganador = 'Croupier'
     print('-' * 21, 'El ganador es', ganador, '-' * 21)
+elif (distancia_player < 21 and distancia_croupier > 21):
+    print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
+    ganador = player
+    print('-' * 21, 'El ganador es', ganador, '-' * 21)
+elif (distancia_croupier < 21 and distancia_player > 21):
+    print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
+    ganador = 'Croupier'
+    print('-' * 21, 'El ganador es', ganador, '-' * 21)
 elif (distancia_player == distancia_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
     print('-' * 21, 'Ambos Empataron!!', '-' * 21)
 else:
