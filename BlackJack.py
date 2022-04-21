@@ -300,7 +300,7 @@ elif (puntuacion_croupier <= 21 and (puntuacion_player > 21 or puntuacion_player
     print('-' * 21, 'El ganador es', ganador, '-' * 21)
 elif (distancia_player == distancia_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
     print('-' * 21, 'Ambos Empataron!!', '-' * 21)
-elif (puntuacion_croupier == puntuacion_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
+elif (puntuacion_croupier == puntuacion_player) and (puntuacion_croupier < 21 and puntuacion_player < 21):
     print('-' * 21, 'Ambos Empataron!!', '-' * 21)
 else:
     print('-' * 21, 'Se excedieron en puntaje ambos, mejor suerte a la proxima!!', '-' * 21)
