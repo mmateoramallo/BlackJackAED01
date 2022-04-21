@@ -265,11 +265,13 @@ def jugar():
     print()
 
     #Quien Obtuvo el mayor puntaje
+    empate = False
     if puntuacion_player > puntuacion_croupier:
         print('-' * 21, player,'tuvo mas puntos!!!!', '-' * 21)
     elif puntuacion_croupier > puntuacion_player:
         print('-' * 21, 'El Crupier tuvo mas puntos!!!!', '-' * 21)
     else:
+        empate = True
         print('-' * 21, 'Ambos Obtuvieron el mismo Puntaje, vuelve a jugar!!', '-' * 21)
 
     #Determinar Ganador
@@ -300,10 +302,9 @@ def jugar():
         print('-' * 21, 'El ganador es', ganador, '-' * 21)
     elif (distancia_player == distancia_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
         print('-' * 21, 'Ambos Empataron!!', '-' * 21)
-    elif (puntuacion_player == puntuacion_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
+    elif (puntuacion_croupier == puntuacion_player) and (puntuacion_croupier < 21 and puntuacion_player < 21):
         print('-' * 21, 'Ambos Empataron!!', '-' * 21)
-    else:
-        print('-' * 21, 'Se excedieron en puntaje ambos, mejor suerte a la proxima!!', '-' * 21)
+
 
     #----> Determinar si el palo de la primera carta es el mismo para ambos
 
