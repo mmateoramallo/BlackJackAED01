@@ -283,27 +283,28 @@ def jugar():
     distancia_player = abs(21 - puntuacion_player)
 
     distancia_croupier = abs(21 - puntuacion_croupier)
+    if not(empate):
+        if (distancia_player < distancia_croupier) and puntuacion_player < 21:
+            print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
+            ganador = player
+            print()
+            print('-' * 21, 'El ganador es', ganador, '-' * 21)
+        elif (distancia_croupier < distancia_player) and puntuacion_croupier < 21:
+            print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
+            ganador = 'Croupier'
+            print()
+            print('-' * 21, 'El ganador es', ganador, '-' * 21)
+        elif (puntuacion_player <= 21 and (puntuacion_croupier > 21 or puntuacion_croupier < 21)):
+            print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
+            ganador = player
+            print()
+            print('-' * 21, 'El ganador es', ganador, '-' * 21)
+        elif (puntuacion_croupier <= 21 and (puntuacion_player > 21 or puntuacion_player < 21)):
+            print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
+            ganador = 'Croupier'
+            print()
+            print('-' * 21, 'El ganador es', ganador, '-' * 21)
 
-    if (distancia_player < distancia_croupier) and puntuacion_player < 21:
-        print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
-        ganador = player
-        print('-' * 21, 'El ganador es', ganador, '-' * 21)
-    elif (distancia_croupier < distancia_player) and puntuacion_croupier < 21:
-        print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
-        ganador = 'Croupier'
-        print('-' * 21, 'El ganador es', ganador, '-' * 21)
-    elif (puntuacion_player <= 21 and (puntuacion_croupier > 21 or puntuacion_croupier < 21)):
-        print('♠' * 21, 'Felicidades!!!!', '♠' * 21)
-        ganador = player
-        print('-' * 21, 'El ganador es', ganador, '-' * 21)
-    elif (puntuacion_croupier <= 21 and (puntuacion_player > 21 or puntuacion_player < 21)):
-        print('-' * 21, 'Intenta Nuevamente!!!!', '-' * 21)
-        ganador = 'Croupier'
-        print('-' * 21, 'El ganador es', ganador, '-' * 21)
-    elif (distancia_player == distancia_croupier) and (puntuacion_croupier < 21 and puntuacion_player < 21):
-        print('-' * 21, 'Ambos Empataron!!', '-' * 21)
-    elif (puntuacion_croupier == puntuacion_player) and (puntuacion_croupier < 21 and puntuacion_player < 21):
-        print('-' * 21, 'Ambos Empataron!!', '-' * 21)
 
 
     #----> Determinar si el palo de la primera carta es el mismo para ambos
